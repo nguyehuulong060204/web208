@@ -1,0 +1,32 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<div class="mt-[100px] mx-auto">
+    <h2 class="ml-16 mb-12">Home/All categories</h2>
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto py-8 flex">
+            <!-- Sidebar -->
+            <div class="w-1/4 pr-4">
+                <form action="" [formGroup]="cateForm">
+                    <div class="mb-4">
+                        <div class="flex gap-[80px] justify-center items-center mb-2">
+                            <label for="cat_id" class="block text-sm font-medium text-gray-700">Danh mục sản phẩm</label>
+                            <button type="button" class="btn btn-secondary w-[90px] h-[30px] bg-[#EDA415] rounded text-white" (click)="resetForm()">Reset</button>
+                        </div>
+                        <select id="cat_id" formControlName="categories" required 
+                                class="border border-gray-300 rounded-md px-3 py-2 block w-full focus:outline-none focus:ring focus:border-blue-300">
+                            <option value="" disabled selected>Tất cả danh mục </option>
+                            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option> 
+                        </select>
+                    </div>    
+                </form>
+            </div>
+            <div *ngIf="productlisst" class="w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div *ngFor="let product of productlisst">
+                    <app-productone [productone]="product"></app-productone>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-bannerthree></app-bannerthree>
+<app-footer></app-footer>
