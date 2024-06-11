@@ -23,7 +23,7 @@ export class AdminaddComponent {
     name: new FormControl('',[Validators.required,Validators.minLength(6)]),
     image: new FormControl('',[Validators.required,]),
     // cat_id: new FormControl(1),
-    price: new FormControl(1000,Validators.min(2000)),
+    price: new FormControl(0,Validators.min(2000)),
     category : new FormControl('',[Validators.required,])
     
   })

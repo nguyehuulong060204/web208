@@ -3,6 +3,7 @@ import { IProduct } from '../type/product';
 import axios from 'axios';
 import { ProductsService } from '../../products.service';
 
+
 @Component({
   selector: 'app-admincontrols',
   templateUrl: './admincontrols.component.html',
@@ -32,4 +33,5 @@ export class AdmincontrolsComponent {
         );
       }
     }
+    
 }

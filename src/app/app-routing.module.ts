@@ -14,6 +14,7 @@ import { AdmincontrolsComponent } from './components/admincontrols/admincontrols
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { EditadminComponent } from './components/editadmin/editadmin.component';
 import { SearchComponent } from './components/search/search.component';
+import { CategoryComponent } from './components/category/category.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,9 @@ const routes: Routes = [
       },
       {
         path: 'add' ,component : AdminaddComponent
+      },
+      {
+        path: 'category' , component: CategoryComponent
       },
       {
         path: 'addcategory' ,component : AddCategoryComponent

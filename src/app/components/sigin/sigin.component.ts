@@ -12,14 +12,15 @@ import { IUser } from '../type/user';
 export class SiginComponent {
   constructor(private userService: UserService){}
   registerform = new FormGroup({
-    name:new FormControl('',Validators.required),
+    name:new FormControl('',[Validators.required, Validators.minLength(6)]),
     email: new FormControl('',[Validators.required,Validators.email]),
-    password: new FormControl('',[Validators.required,Validators.minLength(8)])
+    password: new FormControl('',[Validators.required,Validators.minLength(5)])
   })
   router = new Router();
   onSubmit = ()=>{
       this.userService.RegisterUser(this.registerform.value as IUser).subscribe(
         data=>{
+          localStorage.setItem('users' , data.accessToken)
             alert('Đăng ký thành công')
             this.router.navigate(['login'])
         },

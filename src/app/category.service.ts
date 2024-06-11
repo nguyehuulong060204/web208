@@ -17,6 +17,12 @@ export class CategoryService {
   add_category = (data:typeCategory):Observable<any>=>{
     return this.http.post(this.API_URL,data)
   }
+  get_allCategory = ():Observable<any> => {
+    return this.http.get(this.API_URL)
+  }
+  delete_cate =(id: any):Observable<any> => {
+    return this.http.delete(this.API_URL + '/' +id)
+  }
   getProductsByCategory = (category: string): Observable<any[]> => {
     return this.http.get<any[]>(`${this.API_PRODUCT}?category=${category}`);
   }

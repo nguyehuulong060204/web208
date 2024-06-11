@@ -30,6 +30,8 @@ import { AdminaddComponent } from './components/adminadd/adminadd.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { EditadminComponent } from './components/editadmin/editadmin.component';
 import { SearchComponent } from './components/search/search.component';
+import { CategoryComponent } from './components/category/category.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { SearchComponent } from './components/search/search.component';
     AdminaddComponent,
     AddCategoryComponent,
     EditadminComponent,
-    SearchComponent
+    SearchComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
